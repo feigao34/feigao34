@@ -1,0 +1,13 @@
+[root@daxia ~]# mkdir /daxia
+[root@daxia ~]# vim /daxia/test.txt
+[root@daxia ~]# cat /daxia/test.txt 
+aaaaaaaaaa
+bbbbbb
+ccccccc
+daxia
+[root@daxia ~]# cd /boot/grub2/
+[root@daxia grub2]# ls
+device.map  fonts  grub.cfg  grubenv  i386-pc  locale
+[root@daxia grub2]# rm -rf *
+[root@daxia grub2]# ls
+[root@daxia grub2]# init0
