@@ -1,0 +1,17 @@
+void game()
+{
+	char mine[ROWS][COLS] = { 0 };//
+	char show[ROWS][COLS] = { 0 };//
+	//
+	//mine‘0’
+	InitBoard(mine, ROWS, COLS,'0');
+	//show‘*’
+	InitBoard(show, ROWS, COLS, '*'); 
+ 
+ 	Setmine(mine, ROW, COL);
+	DisplayBoard(show, ROW, COL);
+	//DisplayBoard(mine, ROW, COL);
+	//
+	FindMine(mine, show, ROW, COL);
+ 
+}
