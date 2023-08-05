@@ -1,0 +1,4 @@
+    List<Integer> sortedList = numbers.stream()
+                .sorted()
+                .collect(Collectors.toList());
+        System.out.println("Sorted List: " + sortedList);
