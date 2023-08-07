@@ -1,0 +1,7 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+ 
+void GetMemory(char** p, int num)
+{
+	*p = (char*)malloc(num);
