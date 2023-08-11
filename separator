@@ -1,0 +1,25 @@
+package com.xiaoshan.demo;
+
+import java.io.File;
+
+public class TestDemo {
+	public static void main(String[] args) throws Exception{ 
+		File file = new File("c:" + File.separator)
+		print(file)
+	}
+	
+	/**
+	*@param file 
+	*/
+	public static void print(File file){	
+		if (file.isDirectory()){	
+			File result[] = file.listFiles();	
+			if (result != null){
+				for (int x=0; x<result.length; x++){
+					print(result[x]);	
+				}
+			}
+		}
+		System.out.println(file);	
+	}
+}
