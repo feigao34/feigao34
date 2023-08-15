@@ -1,0 +1,14 @@
+int removeDuplicates(int* nums, int numsSize){
+int pos=0;int src=0;
+    while(src<numsSize-1)
+    {
+        if(nums[src]!=nums[src+1])
+        {
+            nums[pos++]=nums[src++];
+        }
+        else
+        src++;
+    }
+    nums[pos++]=nums[src];//为了防止数组越界访问，导致最后一个元素没有进行赋值，最后在这里补上
+    return pos;
+}
