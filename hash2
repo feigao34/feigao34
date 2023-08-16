@@ -1,0 +1,21 @@
+final V put(K key, int hash, V value, boolean onlyIfAbsent) {
+    HashEntry<K,V> node = tryLock() ? null : scanAndLockForPut(key, hash, value);
+    V oldValue;
+    try {
+        HashEntry<K,V>[] tab = table;
+        int index = (tab.length - 1) & hash;
+        HashEntry<K,V> first = entryAt(tab, index);
+        for (HashEntry<K,V> e = first;;) {
+            if (e != null) {
+                K k;
+                if ((k = e.key) == key ||
+                    (e.hash == hash && key.equals(k))) {
+                    oldValue = e.value;
+                    if (!onlyIfAbsent) {
+                        e.value = value;
+                        ++modCount;
+                    }
+                    break;
+                }
+                e = e.next;
+            }
