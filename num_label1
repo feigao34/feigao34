@@ -1,0 +1,16 @@
+void Finddialog::show_click_num(const QString& num_str)
+{
+    num_label->setText(tr("ww") + num_str + tr("次"));
+}
+
+connect(this,
+        SIGNAL(misc_clicked(const QString&)),
+        this,
+        SLOT(show_click_num(const QString&)));
+void Finddialog::show_click_num(const QString& num_str)
+{
+    QString num = QObject::tr("<font color=#FF0000>%1</font>").arg(num_str);
+    num_label->setText(tr("ww")\
+                          + num + \
+                          tr("s"));
+}
